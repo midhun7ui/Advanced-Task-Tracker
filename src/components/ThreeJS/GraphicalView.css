@@ -1,0 +1,455 @@
+.graphical-view {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.graphical-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.graphical-header h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.graphical-header .icon {
+  color: var(--accent);
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.overview-widget {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  min-height: 160px;
+  border-radius: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.overview-widget:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.widget-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.widget-icon {
+  color: var(--accent);
+}
+
+.widget-header h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 0;
+}
+
+/* ============================ */
+/* ITEM 1: Calendar Widget      */
+/* ============================ */
+
+.calendar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.calendar-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cal-day-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.cal-date-number {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text-primary);
+  letter-spacing: -2px;
+}
+
+.calendar-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding-left: 24px;
+  border-left: 2px solid var(--glass-border);
+}
+
+.cal-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.meta-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.meta-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ============================ */
+/* ITEM 2: Priority Widget      */
+/* ============================ */
+
+.priority-widget {
+  display: flex;
+  flex-direction: column;
+}
+
+.priority-graph {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex: 1;
+  padding: 12px 16px 4px 16px;
+  gap: 20px;
+}
+
+.priority-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  height: 100%;
+  gap: 8px;
+  position: relative;
+}
+
+.priority-bar {
+  width: 100%;
+  max-width: 32px;
+  border-radius: 0; /* fully sharp edges */
+  min-height: 2px;
+  transition: height 0.4s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05); 
+}
+
+/* Sharp, standard flat data-viz colors */
+.bar-low { background: var(--success); }
+.bar-medium { background: var(--accent-light); }
+.bar-high { background: var(--warning); }
+.bar-critical { background: var(--danger); }
+
+/* Custom Glow effects mapped to their constraint colors */
+.priority-bar-container:hover .bar-low {
+  box-shadow: 0 0 18px var(--success);
+  filter: brightness(1.15);
+}
+
+.priority-bar-container:hover .bar-medium {
+  box-shadow: 0 0 18px var(--accent-light);
+  filter: brightness(1.15);
+}
+
+.priority-bar-container:hover .bar-high {
+  box-shadow: 0 0 18px var(--warning);
+  filter: brightness(1.15);
+}
+
+.priority-bar-container:hover .bar-critical {
+  box-shadow: 0 0 18px var(--danger);
+  filter: brightness(1.15);
+}
+
+.priority-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.bar-count-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+/* ============================ */
+/* ITEM 3: Status Widget        */
+/* ============================ */
+
+.status-widget {
+  display: flex;
+  flex-direction: column;
+}
+
+.status-widget-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.status-data-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.status-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.s-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.s-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
+}
+
+.s-val {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.status-divider {
+  width: 1px;
+  background: var(--glass-border);
+}
+
+.urgency-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  flex: 0.8;
+}
+
+.urgency-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-end;
+  text-align: right;
+  background: rgba(0, 0, 0, 0.02);
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+}
+
+[data-theme="dark"] .urgency-block {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.u-label {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.u-val {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.overdue-text { color: var(--danger); }
+.overdue-val { color: var(--danger); }
+
+.status-progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.p-text {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.p-percent {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #0f9d58; 
+}
+
+.progress-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(120, 130, 140, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0f9d58 0%, #34d399 100%);
+  border-radius: 4px;
+  transition: width 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ============================ */
+/* PLACEHOLDERS                 */
+/* ============================ */
+
+.placeholder-widget {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--glass-border);
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+.placeholder-widget:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.placeholder-content {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ============================ */
+/* ITEM 4: Categories Widget    */
+/* ============================ */
+
+.categories-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex: 1;
+  padding: 10px 0;
+}
+
+.donut-chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.donut-chart {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.5s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.donut-hole {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #18191c; /* Always dark */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .donut-hole {
+  background: var(--bg-primary); /* Matches dark theme depth */
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.donut-total {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff; /* Always white */
+  line-height: 1;
+}
+
+.donut-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #9ca3af; /* Always light gray */
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+/* ============================ */
+/* RESPONSIVE BREAKPOINTS       */
+/* ============================ */
+
+@media (max-width: 1300px) {
+  .overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+}
