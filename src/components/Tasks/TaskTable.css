@@ -61,6 +61,7 @@
   color: var(--text-secondary);
   font-weight: 600;
   border-bottom: 1px solid var(--glass-border);
+  border-right: 1.5px solid rgba(128, 128, 128, 0.4); /* Stronger vertical divider */
   position: sticky;
   top: 0;
   background: var(--th-bg);
@@ -68,12 +69,29 @@
   z-index: 10;
 }
 
+[data-theme="dark"] .task-table th {
+  border-right: 1.5px solid rgba(255, 255, 255, 0.3);
+}
+
+.task-table th:last-child {
+  border-right: none;
+}
+
 .task-table td {
   padding: 16px 12px;
   font-size: 0.9rem;
   border-bottom: 1px solid var(--glass-border);
+  border-right: 1.5px solid rgba(128, 128, 128, 0.3); /* Stronger vertical divider */
   vertical-align: middle;
   transition: background-color 0.2s ease;
+}
+
+[data-theme="dark"] .task-table td {
+  border-right: 1.5px solid rgba(255, 255, 255, 0.2);
+}
+
+.task-table td:last-child {
+  border-right: none;
 }
 
 .task-table tbody tr {
@@ -308,6 +326,30 @@
 .delete-task-btn:hover {
   background: rgba(226, 59, 59, 0.1);
   color: var(--danger);
+}
+
+/* Global Animations */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+/* Accessibility utility: Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 /* Modal Styling */
